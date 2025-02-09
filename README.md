@@ -12,3 +12,17 @@ docker run --rm -p 3838:3838 metro-r-image
 ```
 
 Then navigate to `http://localhost:3838/` in your browser to see the dashboard.
+
+## Demo
+
+<img width="1600" alt="P0" src="https://github.com/user-attachments/assets/f0c40eb0-fd0c-4bfe-a516-26794940d98a" />
+
+<img width="1600" alt="P1" src="https://github.com/user-attachments/assets/e265d697-c2a4-4c75-9e03-dfd96ff63228" />
+
+<img width="1600" alt="P2" src="https://github.com/user-attachments/assets/2ee00692-e878-4836-818e-113f5ab5f1d2" />
+
+<img width="1600" alt="P3" src="https://github.com/user-attachments/assets/12ed4d65-9d0c-4bee-85aa-9ee535a6ff45" />
+
+
+
+

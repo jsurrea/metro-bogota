@@ -61,17 +61,17 @@ F3_CreateReturnsMatrix <- function(costo_vagon, costo_confianza) {
 
 F3_SolveSDP <- function(C) {
     # Matriz de ecuaciones de Bellman
-    f <- matrix(0, nrow = length(F3_Estados), ncol = length(F3_epocas))
-    dimnames(f) <- list(as.character(F3_Estados), F3_epocas)
+    f <- matrix(0, nrow = length(F3_Estados), ncol = length(F3_Epocas))
+    dimnames(f) <- list(as.character(F3_Estados), F3_Epocas)
     
     # Matriz de decisiones
-    decisiones <- matrix(0, nrow = length(F3_Estados), ncol = length(F3_epocas))
-    dimnames(decisiones) <- list(as.character(F3_Estados), F3_epocas)
+    decisiones <- matrix(0, nrow = length(F3_Estados), ncol = length(F3_Epocas))
+    dimnames(decisiones) <- list(as.character(F3_Estados), F3_Epocas)
     
     # Caso base: última época. Se consideran solo los retornos inmediatos
     # En la última época se tiene la última franja
     ultima_franja <- F3_Franjas[length(F3_Franjas)]
-    ultima_epoca <- F3_epocas[length(F3_epocas)]
+    ultima_epoca <- F3_Epocas[length(F3_Epocas)]
     for(estado in F3_Estados) {
         # Se toma el mínimo costo entre todas las decisiones para la última franja y estado actual
         f[as.character(estado), ultima_epoca] <- min(C[ultima_franja, as.character(estado), ])
@@ -79,7 +79,7 @@ F3_SolveSDP <- function(C) {
     }
     
     # Caso inductivo: de atrás para adelante, excepto la última
-    for(epoca in rev(F3_epocas[-length(F3_epocas)])){
+    for(epoca in rev(F3_Epocas[-length(F3_Epocas)])){
         for(estado in F3_Estados) {
             # Identificar en qué franja me encuentro
             hora <- as.numeric(strsplit(epoca, ":")[[1]][1])
@@ -95,7 +95,7 @@ F3_SolveSDP <- function(C) {
             inmediatos <- C[franja, as.character(estado), ]
             # Calcular el valor esperado de los retornos futuros
             probabilidades <- P[franja, , as.character(estado), ]
-            epoca_futuro <- match(epoca, F3_epocas) + 1
+            epoca_futuro <- match(epoca, F3_Epocas) + 1
             futuros <- probabilidades %*% f[, epoca_futuro]
             # Hallar los retornos de Bellman
             retornos <- inmediatos + futuros

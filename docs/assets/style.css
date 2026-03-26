@@ -6,6 +6,10 @@
   --muted: #a8b3cc;
   --accent: #63a4ff;
   --border: #2a3452;
+  --card-hover-border: #4d6ca3;
+  --btn-hover-shadow: 0 8px 18px rgba(99, 164, 255, 0.3);
+  --gallery-hover-border: #44649e;
+  --grid-line: rgba(42, 52, 82, 0.45);
 }
 
 * {
@@ -44,7 +48,7 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
+  border-color: var(--card-hover-border);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
@@ -81,7 +85,7 @@ h2 {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: var(--btn-hover-shadow);
 }
 
 .badges {
@@ -126,7 +130,16 @@ h2 {
 
 .gallery-item:hover {
   transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+  border-color: var(--gallery-hover-border);
+}
+
+@supports (color: color-mix(in srgb, white 50%, black 50%)) {
+  :root {
+    --card-hover-border: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
+    --btn-hover-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 30%, transparent);
+    --gallery-hover-border: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+    --grid-line: color-mix(in srgb, var(--border) 50%, transparent);
+  }
 }
 
 .gallery-item img {
@@ -134,6 +147,12 @@ h2 {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .gallery-item img {
+    height: 170px;
+  }
 }
 
 .gallery-item figcaption {
@@ -190,8 +209,8 @@ code {
 .bg-grid {
   inset: 0;
   background-image:
-    linear-gradient(color-mix(in srgb, var(--border) 50%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--border) 50%, transparent) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 36px 36px;
   opacity: 0.08;
 }

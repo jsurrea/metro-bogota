@@ -19,10 +19,6 @@ From the code in `src/app.R` and phase modules:
 
 ## Demo
 
-![Dashboard cover](src/www/image.jpeg)
-
-### Recovered demo screenshots
-
 ![Demo 1](docs/assets/demo/demo-1.png)
 ![Demo 2](docs/assets/demo/demo-2.png)
 ![Demo 3](docs/assets/demo/demo-3.png)

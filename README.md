@@ -21,6 +21,13 @@ From the code in `src/app.R` and phase modules:
 
 ![Dashboard cover](src/www/image.jpeg)
 
+### Capturas recuperadas del demo
+
+![Demo 1](docs/assets/demo/demo-1.png)
+![Demo 2](docs/assets/demo/demo-2.png)
+![Demo 3](docs/assets/demo/demo-3.png)
+![Demo 4](docs/assets/demo/demo-4.png)
+
 ## Installation
 
 ### Option 1: Docker (recommended)

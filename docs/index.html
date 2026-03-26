@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/metro-bogota/" />
+    <title>Metro Bogotá</title>
+    <meta
+      name="description"
+      content="Shiny dashboard for Markov-chain and SDP analysis of Bogotá Metro station operations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero card">
+        <p class="eyebrow">Stochastic Models Project</p>
+        <h1>Metro Bogotá</h1>
+        <p>
+          A Shiny dashboard that models station occupancy, train lifecycle states,
+          and wagon-dispatch decisions using Markov chains and stochastic dynamic
+          programming.
+        </p>
+        <div class="actions">
+          <a class="btn" href="https://github.com/jsurrea/metro-bogota">View on GitHub</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>What it does</h2>
+        <ul>
+          <li><strong>Fase 1:</strong> Continuous-time Markov chain occupancy analysis for three stations.</li>
+          <li><strong>Fase 2:</strong> Discrete-time Markov chain lifecycle/cost analysis from uploaded <code>.xlsx</code> data.</li>
+          <li><strong>Fase 3:</strong> Stochastic dynamic programming policy for wagon dispatch with cost minimization.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Demo</h2>
+        <img src="assets/image.jpeg" alt="Metro Bogotá dashboard cover" class="screenshot" />
+      </section>
+
+      <section class="card">
+        <h2>Tech stack</h2>
+        <div class="badges">
+          <span>R</span>
+          <span>Shiny</span>
+          <span>shinydashboard</span>
+          <span>plotly</span>
+          <span>markovchain</span>
+          <span>readxl</span>
+          <span>Docker</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Getting started</h2>
+        <h3>Docker</h3>
+        <pre><code>docker build -t metro-r-image .
+docker run --rm -p 3838:3838 metro-r-image</code></pre>
+        <h3>Local R execution</h3>
+        <pre><code>cd src
+R -f app.R</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>Project structure</h2>
+        <pre><code>src/
+  app.R
+  Fase_1.R
+  Fase_2.R
+  Fase_3.R
+  www/image.jpeg
+assets/
+  MetroCapitalino.xlsx
+Dockerfile
+LICENSE</code></pre>
+      </section>
+
+      <section class="card">
+        <h2>License</h2>
+        <p>MIT License.</p>
+      </section>
+    </main>
+  </body>
+</html>

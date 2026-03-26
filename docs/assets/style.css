@@ -1,0 +1,111 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #131a2e;
+  --text: #eaf0ff;
+  --muted: #a8b3cc;
+  --accent: #63a4ff;
+  --border: #2a3452;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1a2545 0%, var(--bg) 45%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: color-mix(in srgb, var(--panel) 94%, black 6%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.hero h1 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #081026;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badges span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.screenshot {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  margin: 0;
+  background: #0d1428;
+  border: 1px solid var(--border);
+  padding: 0.85rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 700px) {
+  .container {
+    padding: 2rem 1.25rem 3rem;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
